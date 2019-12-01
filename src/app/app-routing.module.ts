@@ -4,11 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { AdminZoneComponent } from './admin-zone/admin-zone.component';
 
 const routes: Routes = [
-
-  // {
-  //   path: '',
-  //   component: LoginComponent,
-  // },
   {
     path: 'login',
     component: LoginComponent,
@@ -22,6 +17,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' },
 ];
+
 const config: ExtraOptions = {
   useHash: true,
 };

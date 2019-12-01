@@ -6,20 +6,20 @@ import { RolesComponent } from './roles/roles.component';
 import { ColeccionesComponent } from './colecciones/colecciones.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { AreasComponent } from './areas/areas.component';
+import { NotFoundComponent } from '../shared/not-found/not-found.component';
 
-const routes: Routes = [
-    { path: '', component: HomeComponent },
+const routesAdminZone: Routes = [
+    { path: '_', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UsersComponent },
     { path: 'rols', component: RolesComponent },
     { path: 'areas', component: AreasComponent },
     { path: 'collections', component: ColeccionesComponent },
     { path: 'articles', component: ArticulosComponent },
-
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(routesAdminZone)],
     exports: [RouterModule]
 })
 

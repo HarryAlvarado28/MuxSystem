@@ -18,7 +18,6 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AdminZoneComponent } from './admin-zone/admin-zone.component';
 import { AdminZoneModule } from './admin-zone/admin-zone.module';
 
 @NgModule({

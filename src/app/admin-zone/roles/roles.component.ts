@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./roles.component.sass']
 })
 export class RolesComponent implements OnInit {
-
+  principal = true
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

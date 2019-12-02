@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminZoneModule } from './admin-zone/admin-zone.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { AdminZoneModule } from './admin-zone/admin-zone.module';
   imports: [
     AdminZoneModule,
     FormsModule, ReactiveFormsModule,
-    MatInputModule,
-    MatSliderModule,
-    MatFormFieldModule,
+    HttpClientModule,
+    // MatInputModule,
+    // MatSliderModule,
+    // MatFormFieldModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,

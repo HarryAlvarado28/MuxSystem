@@ -6,11 +6,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RolsService {
-
+  // private _baseURL = 'http://localhost:1234/'
+  private _baseURL = 'http://localhost:2828/'
   constructor(private _http: HttpClient) { }
 
   obtenerRoles() {
-    return this._http.get('localhost:2828/rols').pipe(map(((resp: any) => { return resp })))
+    // return this._http.get('localhost:2828/rols').pipe(map(((resp: any) => { return resp })))
+    // return this._http.get(`${this._baseURL}api/users`).pipe(map(((resp: any) => { return resp })))
+    return this._http.get(`${this._baseURL}rols`).pipe(map(((resp: any) => { return resp })))
   }
 
 

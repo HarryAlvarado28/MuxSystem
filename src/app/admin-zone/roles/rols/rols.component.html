@@ -13,12 +13,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let ro of rols; let i=index">
                     <th scope="row">1</th>
-                    <td>SV-01</td>
-                    <td>Y</td>
-                    <td>Supervidor de areas</td>
-                    <td>3</td>
+                    <td>{{ro.nombre}}</td>
+                    <td>{{ro.activo}}</td>
+                    <td>{{ro.descripcion}}</td>
+                    <td>{{ro.fechaInsertada | date}}</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>

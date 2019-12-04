@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RolsService } from 'src/app/service/rols.service';
-
+import { ModelRols } from 'src/app/model/rols.model';
 @Component({
   selector: 'app-rols',
   templateUrl: './rols.component.html',
@@ -9,10 +9,11 @@ import { RolsService } from 'src/app/service/rols.service';
 export class RolsComponent implements OnInit {
 
   constructor(private _rolService: RolsService) { }
-
+  rols: ModelRols[]
   ngOnInit() {
     this._rolService.obtenerRoles().subscribe((r: any) => {
-      console.log("Index item:: ", r)
+      this.rols = r
+      console.log("Index item:: ", this.rols)
     })
   }
 

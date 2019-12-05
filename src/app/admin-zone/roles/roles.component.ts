@@ -10,4 +10,7 @@ export class RolesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+  cleanData() {
+    localStorage.removeItem('01-edit-rol')
+  }
 }

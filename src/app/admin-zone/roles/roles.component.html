@@ -3,14 +3,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
         <button type="button" class="btn btn-info" [routerLink]="['/admin/rols/create']"
-            (click)="this.principal = !this.principal" *ngIf="principal">Crear
+            (click)="this.principal = !this.principal; cleanData()" *ngIf="principal">Crear
             rol</button>
         <button type="button" class="btn btn-info" [routerLink]="['/admin/rols']"
             (click)="this.principal = !this.principal" *ngIf="!principal">Mostrar
             lista</button>
 
-        <button type="button" class="btn btn-info" *ngIf="principal">¡General Informe!
-        </button>
+        <!-- <button type="button" class="btn btn-info" *ngIf="principal">¡General Informe!
+        </button> -->
 
         <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 40px;" *ngIf="principal">
 

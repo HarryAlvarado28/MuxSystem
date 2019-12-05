@@ -19,6 +19,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -31,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSliderModule,
     MatFormFieldModule,
     MatIconModule,
-    MatButtonModule, FormsModule, ReactiveFormsModule,
+    MatButtonModule, FormsModule, ReactiveFormsModule, MatTableModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

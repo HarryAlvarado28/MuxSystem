@@ -1,11 +1,11 @@
 export interface ModelRols {
     id?: string
     nombre: string
-    descripcion?: string
-    activo?: string
+    descripcion: string
+    activo: string
     fechaInsertada?: string
-    idUsuarioInsercion?: string
+    idUsuarioInsercion: number
     fechaUltMod?: string
-    idUsuarioUltMod?: string
+    idUsuarioUltMod?: number
 }
 

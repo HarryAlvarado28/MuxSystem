@@ -9,14 +9,17 @@
             (click)="this.principal = !this.principal" *ngIf="!principal">Mostrar
             lista</button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 40px;" *ngIf="principal">
+        <button type="button" class="btn btn-info" *ngIf="principal">¡General Informe!
+        </button>
+
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 40px;" *ngIf="principal">
 
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Nombre rol" aria-label="Search">
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
 
-        </div>
+        </div> -->
     </nav>
 
     <hr>

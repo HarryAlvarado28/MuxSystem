@@ -40,9 +40,10 @@ export class LoginComponent implements OnInit {
       console.log("respuesta del POST- Acceso Usuario: ", resp)
       localStorage.setItem('MyUser', JSON.stringify(resp))
       if (resp.nombreRol == 'RolGenesis') {
+        console.log('Usuarios con privilegios de ADMIN ROL')
         this.router.navigate(['admin'])
       } else {
-        console.log('Usuario son privilegios de ADMIN')
+        console.log('Usuario sin privilegios de ADMIN')
         this.router.navigate(['mux'])
       }
 

@@ -8,9 +8,10 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { AreasComponent } from './areas/areas.component';
 import { CreateComponent } from './roles/create/create.component';
 import { RolsComponent } from './roles/rols/rols.component';
+import { ProfileComponent } from '../shared/profile/profile.component';
 
 const routesAdminZone: Routes = [
-    { path: '_', component: HomeComponent },
+    // { path: '_', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UsersComponent },
     {
@@ -22,7 +23,8 @@ const routesAdminZone: Routes = [
     { path: 'areas', component: AreasComponent },
     { path: 'collections', component: ColeccionesComponent },
     { path: 'articles', component: ArticulosComponent },
-
+    { path: 'profile', component: ProfileComponent },
+    { path: 'admin', redirectTo: 'admin/home', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -33,7 +33,31 @@
 
             </ul>
         </div>
+        <div class="navbar-collapse collapse w-60 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Right</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        {{usuario.apellido}}, {{usuario.nombre}}
+                    </a>
+        
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/admin/profile']">Mi cuenta</a>
+                        <a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">Cerrar sesión</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
     </nav>
+
     <hr>
     <router-outlet></router-outlet>
 </div>

@@ -15,12 +15,15 @@ import { LoginComponent } from './login/login.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher, MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminZoneModule } from './admin-zone/admin-zone.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MuxZoneComponent } from './mux-zone/mux-zone.component';
+import { MuxZoneModule } from './mux-zone/mux-zone.module';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,13 @@ import { MuxZoneComponent } from './mux-zone/mux-zone.component';
   ],
   imports: [
     AdminZoneModule,
+    MuxZoneModule,
     FormsModule, ReactiveFormsModule,
     HttpClientModule,
-    // MatInputModule,
-    // MatSliderModule,
-    // MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,

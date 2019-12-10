@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminZoneComponent } from './admin-zone/admin-zone.component';
+import { MuxZoneComponent } from './mux-zone/mux-zone.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,12 @@ const routes: Routes = [
     component: AdminZoneComponent,
     loadChildren: () => import('./admin-zone/admin-zone.module')
       .then(m => m.AdminZoneModule),
+  },
+  {
+    path: 'mux',
+    component: MuxZoneComponent,
+    loadChildren: () => import('./mux-zone/mux-zone.module')
+      .then(m => m.MuxZoneModule),
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' },

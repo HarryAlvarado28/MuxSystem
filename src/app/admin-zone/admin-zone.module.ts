@@ -20,11 +20,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { ProfileComponent } from '../shared/profile/profile.component';
 
 
 
 @NgModule({
-  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, CreateComponent, RolsComponent],
+  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, CreateComponent, RolsComponent, ProfileComponent],
   imports: [
     CommonModule,
     AdminZoneRoutingModule,

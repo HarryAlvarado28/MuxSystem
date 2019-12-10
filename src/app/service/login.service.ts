@@ -56,5 +56,9 @@ export class LoginService {
 
   }
 
+  myUser(id) {
+    return this._http.get(`${this._baseURL}users/${id}`).pipe(map(((resp: any) => { return resp })))
+  }
+
 
 }

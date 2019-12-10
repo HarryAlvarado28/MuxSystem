@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 // import { ModelUser } from '../model/user.model';
 import { HttpClient } from '@angular/common/http';
+import { ModelUsuario } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,8 @@ export class LoginService {
     return this._http.get(`${this._baseURL}users/${id}`).pipe(map(((resp: any) => { return resp })))
   }
 
+  myUserUpdate(u: ModelUsuario) {
+    return this._http.put(`${this._baseURL}users/${u.id}`, u).pipe(map(((resp: any) => { return resp })))
+  }
 
 }

@@ -7,60 +7,66 @@
             <p class="card-text"><small class="text-muted">Última actulización
                     {{myUser.fechaUltMod | date:'medium'}}</small></p>
             <hr>
-            <form>
+            <form [formGroup]="formProfile" class="form-valide">
                 <div class="form-row">
                     <div class="col-md-4 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Nombre" [formControl]="nombre" required>
-                            <mat-error *ngIf="nombre.invalid">{{getErrorMessage('nombre')}}</mat-error>
+                            <input matInput placeholder="Nombre" formControlName="f_nombre" required>
+                            <!-- <mat-error *ngIf="this.formProfile['f_nombre'].invalid">{{getErrorMessage('f_nombre')}}
+                            </mat-error> -->
                         </mat-form-field>
                     </div>
                     <div class="col-md-4 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Apellido" [formControl]="apellido" required>
-                            <mat-error *ngIf="apellido.invalid">{{getErrorMessage('apellido')}}</mat-error>
+                            <input matInput placeholder="Apellido" formControlName="f_apellido" required>
+                            <!-- <mat-error *ngIf="this.formProfile['f_apellido'].invalid">{{getErrorMessage('f_apellido')}}
+                            </mat-error> -->
                         </mat-form-field>
                     </div>
 
                     <div class="col-md-4 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Username" [formControl]="username" required>
-                            <mat-error *ngIf="username.invalid">{{getErrorMessage('username')}}</mat-error>
+                            <input matInput placeholder="Username" formControlName="f_username" required>
+                            <!-- <mat-error *ngIf="this.formProfile['f_username'].invalid">{{getErrorMessage('f_username')}}
+                            </mat-error> -->
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Ingrese su Correo Electrónico" [formControl]="email" required>
-                            <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+                            <input matInput placeholder="Ingrese su Correo Electrónico" formControlName="f_email"
+                                required>
+                            <!-- <mat-error *ngIf="this.formProfile['f_email'].invalid">{{getErrorMessage('f_email')}}
+                            </mat-error> -->
                         </mat-form-field>
                     </div>
                     <div class="col-md-3 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Género" [formControl]="genero">
+                            <input matInput placeholder="Género" formControlName="f_genero">
                         </mat-form-field>
 
                     </div>
                     <div class="col-md-3 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Fecha Nacimiento" [formControl]="fechaNacimiento">
+                            <input matInput placeholder="Fecha Nacimiento" formControlName="f_fechaNacimiento">
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-3 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Telefono Móvil" [formControl]="telefono">
+                            <input matInput placeholder="Telefono Móvil" formControlName="f_telefono">
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="col-md-3 mb-3">
-                        <button class="btn btn-outline-danger btn-block" type="submit">Cancelar y salir</button>
+                        <button class="btn btn-outline-danger btn-block" (click)="out()">Cancelar y salir</button>
                     </div>
                     <div class="col-md-7 mb-7">
-                        <button class="btn btn-outline-success btn-block" type="submit">Salvar cambios</button>
+                        <button class="btn btn-outline-success btn-block" (click)="saveChanges()">Salvar
+                            cambios</button>
                     </div>
                 </div>
             </form>

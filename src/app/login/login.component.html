@@ -1,35 +1,41 @@
-<div class="mx-auto" style="width: 200px;">
-    <!-- Centered element -->
-    <div class="card" style="width: 21rem;">
-        <img src="./assets/logo.png" class="card-img-top" alt="...">
-        <div class="card-body">
+<div class="d-flex align-content-center flex-wrap">
 
-            <form [formGroup]="vformLogin"  (submit)="iniciarSesion()" class="form-valide">
+    <div class="mx-auto" style="width: 200px;">
+        <!-- Centered element -->
+        <div class="card" style="width: 21rem; margin-top: 100px;margin-bottom: 100px;">
+            <img src="./assets/logo.png" class="card-img-top" alt="...">
+            <div class="card-body">
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Usuario</label>
-                    <input formControlName="usuario" type="text" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Usuario">
-                </div>
+                <form [formGroup]="vformLogin"  (submit)="iniciarSesion()" class="form-valide">
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Contraseña</label>
-                    <input formControlName="contrasena" type="password" class="form-control" id="exampleInputPassword1"
-                        placeholder="Contraseña">
-                    <small id="emailHelp" class="form-text text-muted">He olvidado mi contraseña, <a href="">solicitar
-                            cambio de contraseña</a>.</small>
-                </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Usuario</label>
+                        <input formControlName="usuario" type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Usuario">
+                    </div>
 
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
-                </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Contraseña</label>
+                        <input formControlName="contrasena" type="password" class="form-control"
+                            id="exampleInputPassword1" placeholder="Contraseña">
+                        <small id="emailHelp" class="form-text text-muted">He olvidado mi contraseña, <a
+                                href="">solicitar
+                                cambio de contraseña</a>.</small>
+                    </div>
 
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Iniciar sesion</button>
-                </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                    </div>
 
-            </form>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                    </div>
+
+                </form>
+
+            </div>
         </div>
     </div>
+
 </div>

@@ -30,10 +30,10 @@
             </div> -->
 
             <div class="form-group d-flex justify-content-center">
-                <button type="button" class="btn btn-success btn-block" type="submit" [routerLink]="['/admin/rols']"
-                    *ngIf="isNewData" (click)="crearRol()">Guardar</button>
-                <button type="button" class="btn btn-success btn-block" type="submit" [routerLink]="['/admin/rols']"
-                    *ngIf="!isNewData" (click)="editarRol()">Salvar cambios</button>
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="isNewData"
+                    (click)="crearRol()">Guardar</button>
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="!isNewData"
+                    (click)="editarRol()">Salvar cambios</button>
             </div>
             <div class=" form-group d-flex justify-content-center">
                 <button type="button" class="btn btn-outline-danger btn-block" (click)="cleanData()"

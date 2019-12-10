@@ -34,13 +34,6 @@ export class CreateComponent implements OnInit {
     })
 
   }
-  // submit() {
-  //   if (this.isNewData) {
-  //     this.crearRol()
-  //   } else {
-  //     this.editarRol()
-  //   }
-  // }
 
   crearRol() {
     if (this.formRol.invalid) {
@@ -57,7 +50,6 @@ export class CreateComponent implements OnInit {
       console.log("respuesta del POST- creando Rol: ", resp)
     })
     Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", creado!`, 'El rol se ha creado correctamente', 'success').then(() => { this.cleanData() })
-
   }
 
   editarRol() {
@@ -75,11 +67,10 @@ export class CreateComponent implements OnInit {
     //   console.log("respuesta del POST- creando Rol: ", resp)
     // })
     Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", creado!`, 'El rol se ha creado correctamente', 'success').then(() => { this.cleanData() })
-
   }
 
-
   cleanData() {
+    this._route.navigateByUrl("admin/rols")
     localStorage.removeItem('01-edit-rol')
   }
 

@@ -20,11 +20,13 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminZoneModule } from './admin-zone/admin-zone.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MuxZoneComponent } from './mux-zone/mux-zone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    MuxZoneComponent,
   ],
   imports: [
     AdminZoneModule,

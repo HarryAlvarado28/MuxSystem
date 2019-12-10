@@ -3,7 +3,7 @@ export interface ModelRols {
     nombre: string
     descripcion: string
     activo: string
-    fechaInsertada?: string
+    fechaInsercion?: string
     idUsuarioInsercion: number
     fechaUltMod?: string
     idUsuarioUltMod?: number

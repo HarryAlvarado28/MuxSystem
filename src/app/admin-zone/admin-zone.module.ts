@@ -22,11 +22,14 @@ import { MatTableModule } from '@angular/material/table';
 import { ProfileComponent } from '../shared/profile/profile.component';
 import { RolsFormComponent } from './roles/rols-form/rols-form.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
-  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent],
+  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent, UserListComponent, UserFormComponent],
   imports: [
     CommonModule,
     AdminZoneRoutingModule,
@@ -34,7 +37,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSliderModule,
     MatFormFieldModule,
     MatIconModule,
-    MatButtonModule, FormsModule, ReactiveFormsModule, MatTableModule, MatSelectModule
+    MatButtonModule, FormsModule, ReactiveFormsModule, MatTableModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

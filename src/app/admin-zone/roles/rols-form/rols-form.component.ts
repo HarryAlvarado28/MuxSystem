@@ -61,7 +61,7 @@ export class RolsFormComponent implements OnInit {
     this._rolService.rolCreate(this.rol).subscribe((resp: any) => {
       console.log("respuesta del POST- creando Rol: ", resp)
     })
-    Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", actualizado!`, 'El rol se ha actualizado correctamente', 'success').then(() => { this.cleanData() })
+    Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", creado!`, 'El rol se ha creado correctamente', 'success').then(() => { this.cleanData() })
   }
 
   editarRol() {
@@ -82,7 +82,7 @@ export class RolsFormComponent implements OnInit {
       console.log("Method UPDATE-Rol: ", resp)
     })
 
-    Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", creado!`, 'El rol se ha creado correctamente', 'success').then(() => { this.cleanData() })
+    Swal.fire(`¡ROL "<strong>${this.formRol.value.rol_nombre}</strong>", actualizado!`, 'El rol se ha actualizado correctamente', 'success').then(() => { this.cleanData() })
   }
 
   cleanData() {

@@ -9,11 +9,18 @@ import { AreasComponent } from './areas/areas.component';
 import { RolsComponent } from './roles/rols/rols.component';
 import { ProfileComponent } from '../shared/profile/profile.component';
 import { RolsFormComponent } from './roles/rols-form/rols-form.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
 
 const routesAdminZone: Routes = [
     // { path: '_', component: HomeComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'users', component: UsersComponent },
+    {
+        path: 'users', component: UsersComponent, children: [
+            { path: '', component: UserListComponent },
+            { path: 'form', component: UserFormComponent },
+        ]
+    },
     {
         path: 'rols', component: RolesComponent, children: [
             { path: '', component: RolsComponent },

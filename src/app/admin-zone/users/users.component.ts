@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.sass']
 })
 export class UsersComponent implements OnInit {
-
+  principal = true
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+  cleanData() {
+    localStorage.removeItem('01-edit-rol')
+    localStorage.removeItem('02-edit-user')
   }
 
 }

@@ -1,53 +1,18 @@
 <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-
-        <button type="button" class="btn btn-info">Crear área</button>
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 40px;">
-
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Nombre área" aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-
-        </div>
-    </nav>
-
-    <hr>
-
-    <div class="container-fluid" style="background-color: #ffebcde3; border-radius: 7px;">
-
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <!-- <th scope="col">id</th> -->
-                    <th scope="col">Fecha de registro</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Usuario responsable</th>
-                    <!-- <th scope="col">Rol</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>01-11-2019.10:45</td>
-                    <td>Astronomia</td>
-                    <td>Sistema solar</td>
-                    <td>Mark Otto</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>09-05-2019.10:45</td>
-                    <td>Fisicalandia</td>
-                    <td>El sonido en movimiento</td>
-                    <td>Larry Bird</td>
-                </tr>
-            </tbody>
-        </table>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    
+            <button type="button" class="btn btn-info" [routerLink]="['/admin/areas/form']"
+                (click)="this.principal = !this.principal; cleanData()" *ngIf="principal">Crear
+                area</button>
+            <button type="button" class="btn btn-info" [routerLink]="['/admin/areas']"
+                (click)="this.principal = !this.principal" *ngIf="!principal">Mostrar
+                lista</button>
+    
+        </nav>
+    
+        <hr>
+    
+        <router-outlet></router-outlet>
+    
     </div>
-</div>

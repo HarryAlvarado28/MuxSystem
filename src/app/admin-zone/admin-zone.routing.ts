@@ -11,6 +11,8 @@ import { ProfileComponent } from '../shared/profile/profile.component';
 import { RolsFormComponent } from './roles/rols-form/rols-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
+import { AreaListComponent } from './areas/area-list/area-list.component';
+import { AreaFormComponent } from './areas/area-form/area-form.component';
 
 const routesAdminZone: Routes = [
     // { path: '_', component: HomeComponent },
@@ -27,7 +29,12 @@ const routesAdminZone: Routes = [
             { path: 'form', component: RolsFormComponent },
         ]
     },
-    { path: 'areas', component: AreasComponent },
+    {
+        path: 'areas', component: AreasComponent, children: [
+            { path: '', component: AreaListComponent },
+            { path: 'form', component: AreaFormComponent },
+        ]
+    },
     { path: 'collections', component: ColeccionesComponent },
     { path: 'articles', component: ArticulosComponent },
     { path: 'profile', component: ProfileComponent },

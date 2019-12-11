@@ -26,10 +26,12 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AreaFormComponent } from './areas/area-form/area-form.component';
+import { AreaListComponent } from './areas/area-list/area-list.component';
 
 
 @NgModule({
-  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent, UserListComponent, UserFormComponent],
+  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent, UserListComponent, UserFormComponent, AreaFormComponent, AreaListComponent],
   imports: [
     CommonModule,
     AdminZoneRoutingModule,

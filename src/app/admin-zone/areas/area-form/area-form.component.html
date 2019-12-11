@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+    <div class="container-fluid d-flex justify-content-center">
+
+        <form [formGroup]="formArea" class="form-valide"
+            style="background-color: whitesmoke; padding: 20px; border-radius: 10px;">
+
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre del Area</mat-label>
+                    <input matInput formControlName="fa_nombre" placeholder="Estrellas">
+                    <mat-icon matSuffix>label_outline</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción del Area</mat-label>
+                    <textarea matInput formControlName="fa_descripcion" placeholder="El univeso y mucho más"></textarea>
+                    <mat-icon matSuffix>format_indent_increase</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="isNewData"
+                    (click)="crearRol()">Guardar</button>
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="!isNewData"
+                    (click)="editarRol()">Salvar cambios</button>
+            </div>
+            <div class=" form-group d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-danger btn-block" (click)="cleanData()"
+                    [routerLink]="['/admin/rols']">Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreasComponent implements OnInit {
 
+  principal = true
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+  cleanData() {
+    localStorage.removeItem('01-edit-area')
   }
 
 }

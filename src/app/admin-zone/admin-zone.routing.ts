@@ -15,10 +15,12 @@ import { AreaListComponent } from './areas/area-list/area-list.component';
 import { AreaFormComponent } from './areas/area-form/area-form.component';
 import { ColeccionListComponent } from './colecciones/coleccion-list/coleccion-list.component';
 import { ColeccionFormComponent } from './colecciones/coleccion-form/coleccion-form.component';
+import { InMuxComponent } from './in-mux/in-mux.component';
 
 const routesAdminZone: Routes = [
     // { path: '_', component: HomeComponent },
     { path: 'home', component: HomeComponent },
+    { path: 'in-mux', component: InMuxComponent },
     {
         path: 'users', component: UsersComponent, children: [
             { path: '', component: UserListComponent },

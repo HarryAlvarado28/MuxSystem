@@ -1,1 +1,87 @@
-<p>mux-zone works!</p>
+<hr>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" [routerLink]="[ 'home' ]" routerLinkActive="active">
+            <img src="../../assets/logov1.png" width="43" height="30" class="d-inline-block align-top" alt="">
+            MuxSystem
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item" *ngFor="let m of listaMenu">
+                    <a class="nav-link" [routerLink]="[m.url]" routerLinkActive="active">{{m.label}}</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['home']" routerLinkActive="active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['users']" routerLinkActive="active">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['rols']" routerLinkActive="active">Roles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['areas']" routerLinkActive="active">Áreas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['collections']" routerLinkActive="active">Colecciones</a>
+                </li> -->
+
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-60 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        {{usuario.apellido}}, {{usuario.nombre}}
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/mux/profile']">Mi cuenta</a>
+                        <a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">Cerrar sesión</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <hr>
+    <router-outlet></router-outlet>
+</div>
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
+<div class='main'></div>
+<footer class="footer">
+    <div class="covercolor">
+        <div class="container text-white">
+            <br>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-2">
+                    <!-- <h4>Facebook</h4>
+                    <p><i class="fab fa-facebook"></i> <a href="#">/usuario</a></p> -->
+                </div>
+                <div class="col-12 col-md-4 col-lg-4">
+                    <h4 id="contacto">Contacto</h4>
+                    <p>San Telmo</p>
+                    <p>Direcci&oacute;n: Univesidad de Panamá - Panamá<br> Tel&eacute;fonos:
+                        <br> eMail: mesa.ayuda@up.ac.pa
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-6">
+                    <p>
+                        MuxSystem
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

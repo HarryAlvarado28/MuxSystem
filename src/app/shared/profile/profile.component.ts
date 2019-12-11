@@ -112,9 +112,12 @@ export class ProfileComponent implements OnInit {
   }
 
   out() {
-    if (this.myUser.nombreRol == 'RolGenesis') {
-      this._router.navigateByUrl('admin')
-    }
+    this._router.navigateByUrl('admin')
+    // if (this.myUser.nombreRol == 'RolGenesis' || this.myUser.nombreRol == 'Admin' || this.myUser.nombreRol == 'AdminMux' || this.myUser.nombreRol == 'Administrador') {
+    //   this._router.navigateByUrl('admin')
+    // } else {
+    //   this._router.navigateByUrl('mux')
+    // }
   }
 
 }

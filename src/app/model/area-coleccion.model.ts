@@ -1,15 +1,14 @@
-export interface ModelColecciones {
-    id?: number
+import { ModelColecciones } from './coleccion.model';
+
+export interface ModelAreaColeccion {
+    id?: string
     nombre?: string
     descripcion?: string
-    descripcionL?: string
-    urlImg?: string
-    idArea?: number
-    nombreArea?: string
     idBitacora?: number
     fechaInsercion?: Date
     idUsuarioInsercion?: number
     fechaUltMod?: Date
     idUsuarioUltMod?: number
+    coleccion?: ModelColecciones
 }
 

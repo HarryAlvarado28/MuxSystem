@@ -1,0 +1,54 @@
+<div class="container-fluid" width="12 rem" *ngFor="let i of listAreas">
+    <div class="jumbotron jumbotron-fluid" style="padding: 10px;">
+        <div class="container">
+            <h1 class="display-6">{{i.nombre}}</h1>
+            <p class="lead">{{i.descripcion}}</p>
+        </div>
+    </div>
+    <hr>
+
+
+    <div *ngFor="let j of listColecciones">
+        <div *ngIf="i.id == j.idArea" class="d-flex justify-content-center">
+            <div class="card-deck" style="max-width: 500px; margin: 30px;">
+                <div class="card">
+                    <img [src]="j.urlImg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{j.nombre}}</h5>
+                        <p class="card-text">{{j.descripcion}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated {{j.idUsuarioUltMod}}</small>
+                    </div>
+                </div>
+                <!-- <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height
+                            action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+</div>

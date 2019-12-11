@@ -1,5 +1,5 @@
 export interface ModelAreas {
-    id?: string
+    id?: number
     nombre?: string
     descripcion?: string
     idBitacora?: number

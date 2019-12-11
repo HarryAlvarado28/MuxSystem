@@ -1,18 +1,18 @@
 <div class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    
-            <button type="button" class="btn btn-info" [routerLink]="['/admin/areas/form']"
-                (click)="this.principal = !this.principal; cleanData()" *ngIf="principal">Crear
-                area</button>
-            <button type="button" class="btn btn-info" [routerLink]="['/admin/areas']"
-                (click)="this.principal = !this.principal" *ngIf="!principal">Mostrar
-                lista</button>
-    
-        </nav>
-    
-        <hr>
-    
-        <router-outlet></router-outlet>
-    
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+        <button type="button" class="btn btn-info" [routerLink]="['/admin/areas/form']"
+            (click)="this.principal = !this.principal; cleanData()" *ngIf="principal">Crear
+            area</button>
+        <button type="button" class="btn btn-info" [routerLink]="['/admin/areas']"
+            (click)="this.principal = !this.principal" *ngIf="!principal">Mostrar
+            lista</button>
+
+    </nav>
+
+    <hr>
+
+    <router-outlet></router-outlet>
+
+</div>

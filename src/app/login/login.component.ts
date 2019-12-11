@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
     this._loginService.login({ username: this.vformLogin.value.usuario, password: this.vformLogin.value.contrasena }).subscribe((resp: any) => {
       console.log("respuesta del POST- Acceso Usuario: ", resp)
       localStorage.setItem('MyUser', JSON.stringify(resp))
+      console.log("Rol del sujeto: ", resp.nombreRol)
       if (resp.nombreRol == 'RolGenesis') {
         console.log('Usuarios con privilegios de ADMIN ROL')
         this.router.navigate(['admin'])

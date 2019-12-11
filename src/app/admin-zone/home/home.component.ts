@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
+import { ModelUsuario } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private loginServices: LoginService) { }
+  myUser: ModelUsuario
   ngOnInit() {
+    this.myUser = JSON.parse(localStorage.getItem('MyUser'))
   }
 
 }

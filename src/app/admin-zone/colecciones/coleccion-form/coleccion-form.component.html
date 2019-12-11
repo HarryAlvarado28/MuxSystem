@@ -1,0 +1,66 @@
+<div class="container-fluid">
+
+    <div class="container-fluid d-flex justify-content-center">
+
+        <form [formGroup]="formColeccion" class="form-valide"
+            style="background-color: whitesmoke; padding: 20px; border-radius: 10px; width: 500px;">
+
+            <div class="form-group d-flex justify-content-center">
+                <mat-form-field appearance="outline" style="width: 450px;">
+                    <mat-label>Nombre de la Colección</mat-label>
+                    <input matInput formControlName="fc_nombre" placeholder="Estrellas">
+                    <mat-icon matSuffix>label_outline</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <mat-form-field appearance="outline" style="width: 450px;">
+                    <mat-label>Descripción corta</mat-label>
+                    <textarea matInput formControlName="fc_descripcion" placeholder="El univeso y mucho más"></textarea>
+                    <mat-icon matSuffix>format_indent_increase</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group  d-flex justify-content-center">
+                <mat-form-field appearance="outline" style="width: 450px;">
+                    <mat-label>Categoria ó Área</mat-label>
+                    <mat-select formControlName="fc_idArea">
+                        <mat-option *ngFor="let i of listArea" [value]="i.id">{{i.nombre}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group  d-flex justify-content-center">
+                <mat-form-field appearance="outline" style="width: 450px;">
+                    <mat-label>URL de Imagen</mat-label>
+                    <input matInput formControlName="fc_urlImg" placeholder="Estrellas">
+                    <mat-icon matSuffix>label_outline</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group  d-flex justify-content-center">
+                <mat-form-field appearance="outline" style="width: 450px;">
+                    <mat-label>Descripción Larga</mat-label>
+                    <textarea matInput formControlName="fc_descripcionL"
+                        placeholder="El univeso y mucho más"></textarea>
+                    <mat-icon matSuffix>format_indent_increase</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="isNewData"
+                    (click)="crearRol()">Guardar</button>
+                <button type="button" class="btn btn-success btn-block" type="submit" *ngIf="!isNewData"
+                    (click)="editarRol()">Salvar cambios</button>
+            </div>
+            <div class=" form-group d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-danger btn-block" (click)="cleanData()"
+                    [routerLink]="['/admin/rols']">Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

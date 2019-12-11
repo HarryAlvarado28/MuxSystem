@@ -28,10 +28,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AreaFormComponent } from './areas/area-form/area-form.component';
 import { AreaListComponent } from './areas/area-list/area-list.component';
+import { ColeccionFormComponent } from './colecciones/coleccion-form/coleccion-form.component';
+import { ColeccionListComponent } from './colecciones/coleccion-list/coleccion-list.component';
 
 
 @NgModule({
-  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent, UserListComponent, UserFormComponent, AreaFormComponent, AreaListComponent],
+  declarations: [AdminZoneComponent, HomeComponent, UsersComponent, RolesComponent, AreasComponent, ColeccionesComponent, ArticulosComponent, RolsComponent, ProfileComponent, RolsFormComponent, UserListComponent, UserFormComponent, AreaFormComponent, AreaListComponent, ColeccionFormComponent, ColeccionListComponent],
   imports: [
     CommonModule,
     AdminZoneRoutingModule,

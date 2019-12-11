@@ -6,9 +6,9 @@ import { RolesComponent } from './roles/roles.component';
 import { ColeccionesComponent } from './colecciones/colecciones.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { AreasComponent } from './areas/areas.component';
-import { CreateComponent } from './roles/create/create.component';
 import { RolsComponent } from './roles/rols/rols.component';
 import { ProfileComponent } from '../shared/profile/profile.component';
+import { RolsFormComponent } from './roles/rols-form/rols-form.component';
 
 const routesAdminZone: Routes = [
     // { path: '_', component: HomeComponent },
@@ -17,7 +17,7 @@ const routesAdminZone: Routes = [
     {
         path: 'rols', component: RolesComponent, children: [
             { path: '', component: RolsComponent },
-            { path: 'create', component: CreateComponent },
+            { path: 'form', component: RolsFormComponent },
         ]
     },
     { path: 'areas', component: AreasComponent },

@@ -7,19 +7,20 @@ import { ModelRols } from '../model/rols.model';
   providedIn: 'root'
 })
 export class RolsService {
-  // private _baseURL = 'http://localhost:1234/'
   private _baseURL = 'http://localhost:2828/'
   constructor(private _http: HttpClient) { }
 
-  obtenerRoles() {
-    // return this._http.get('localhost:2828/rols').pipe(map(((resp: any) => { return resp })))
-    // return this._http.get(`${this._baseURL}api/users`).pipe(map(((resp: any) => { return resp })))
+  rolObtener() {
     return this._http.get(`${this._baseURL}rols`).pipe(map(((resp: any) => { return resp })))
   }
 
-  crearRol(rol: ModelRols) {
+  rolCreate(rol: ModelRols) {
     console.log("Rol:: ", rol)
     return this._http.post(`${this._baseURL}rols`, rol).pipe(map(((resp: any) => { return resp })))
+  }
+
+  rolUpdate(rol: ModelRols) {
+    return this._http.put(`${this._baseURL}rols/${rol.id}`, rol).pipe(map(((resp: any) => { return resp })))
   }
 
 }

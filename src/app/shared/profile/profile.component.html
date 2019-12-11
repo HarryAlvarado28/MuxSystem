@@ -4,59 +4,99 @@
             <h5 class="card-title">¡Hola, {{myUser.nombre}}!</h5>
             <p class="card-text">Estas en tu perfil de usuario y aqui podras hacer todos las modificaciones que gustes.
             </p>
-            <p class="card-text"><small class="text-muted">Última actulización
-                    {{myUser.fechaUltMod | date:'medium'}}</small></p>
+
             <hr>
             <form [formGroup]="formProfile" class="form-valide">
                 <div class="form-row">
                     <div class="col-md-4 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Nombre" formControlName="f_nombre" required>
-                            <!-- <mat-error *ngIf="this.formProfile['f_nombre'].invalid">{{getErrorMessage('f_nombre')}}
-                            </mat-error> -->
+                            <input matInput placeholder="Nombre" formControlName="fu_nombre" required>
+
                         </mat-form-field>
                     </div>
                     <div class="col-md-4 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Apellido" formControlName="f_apellido" required>
-                            <!-- <mat-error *ngIf="this.formProfile['f_apellido'].invalid">{{getErrorMessage('f_apellido')}}
-                            </mat-error> -->
+                            <input matInput placeholder="Apellido" formControlName="fu_apellido" required>
+
                         </mat-form-field>
                     </div>
 
                     <div class="col-md-4 mb-3 example-container">
+
                         <mat-form-field>
-                            <input matInput placeholder="Username" formControlName="f_username" required>
-                            <!-- <mat-error *ngIf="this.formProfile['f_username'].invalid">{{getErrorMessage('f_username')}}
-                            </mat-error> -->
+                            <mat-label>Activar usuario</mat-label>
+                            <mat-select formControlName="fu_activo" [disabled]="true">
+                                <mat-option value="No">No</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                            </mat-select>
                         </mat-form-field>
+
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Ingrese su Correo Electrónico" formControlName="f_email"
+                            <input matInput placeholder="Ingrese su Correo Electrónico" formControlName="fu_email"
                                 required>
-                            <!-- <mat-error *ngIf="this.formProfile['f_email'].invalid">{{getErrorMessage('f_email')}}
-                            </mat-error> -->
                         </mat-form-field>
                     </div>
+
                     <div class="col-md-3 mb-3 example-container">
+
                         <mat-form-field>
-                            <input matInput placeholder="Género" formControlName="f_genero">
+                            <mat-label>Rol</mat-label>
+                            <mat-select formControlName="fu_idrol" [disabled]="true">
+                                <mat-option *ngFor="let i of listRol" [value]="i.id">{{i.nombre}}
+                                </mat-option>
+                            </mat-select>
                         </mat-form-field>
 
                     </div>
                     <div class="col-md-3 mb-3 example-container">
+
                         <mat-form-field>
-                            <input matInput placeholder="Fecha Nacimiento" formControlName="f_fechaNacimiento">
+                            <mat-label>Género</mat-label>
+                            <mat-select formControlName="fu_genero" required>
+                                <mat-option value="M">Masculino</mat-option>
+                                <mat-option value="F">Femenino</mat-option>
+                            </mat-select>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="col-md-5 mb-3 example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="Teléfono Móvil" formControlName="fu_telefono">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4 mb-3 example-container">
+
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento"
+                                formControlName="fu_fechaNacimiento">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="col-md-5 mb-3 example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="Nombre Usuario" formControlName="fu_username" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4 mb-3 example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="Contraseña" type="password" formControlName="fu_password"
+                                required>
+                        </mat-form-field>
+                    </div>
                     <div class="col-md-3 mb-3 example-container">
                         <mat-form-field>
-                            <input matInput placeholder="Telefono Móvil" formControlName="f_telefono">
+                            <input matInput placeholder="Confirmar Contraseña" type="password"
+                                formControlName="fu_password_confi" required>
                         </mat-form-field>
                     </div>
                 </div>
@@ -64,6 +104,7 @@
                     <div class="col-md-3 mb-3">
                         <button class="btn btn-outline-danger btn-block" (click)="out()">Cancelar y salir</button>
                     </div>
+
                     <div class="col-md-7 mb-7">
                         <button class="btn btn-outline-success btn-block" (click)="saveChanges()">Salvar
                             cambios</button>

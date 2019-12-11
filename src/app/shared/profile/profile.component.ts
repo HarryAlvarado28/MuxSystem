@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { ModelUsuario } from 'src/app/model/user.model';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
+import { ModelRols } from 'src/app/model/rols.model';
+import { RolsService } from 'src/app/service/rols.service';
+import { UsersService } from 'src/app/service/users.service';
+import { ModelUsuario } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -41,49 +44,37 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private _loginServer: LoginService, private _router: Router) { }
+  constructor(private _loginServer: LoginService, private _router: Router, private _rolsService: RolsService, private _userService: UsersService) { }
   myUser: ModelUsuario
   formProfile: FormGroup
+  listRol: ModelRols[]
   ngOnInit() {
-    this.myUser = JSON.parse(localStorage.getItem('MyUser'))
-    console.log("My USER:: ", this.myUser)
-    this.formProfile = new FormGroup({
-      f_nombre: new FormControl(this.myUser.nombre, Validators.required),
-      f_apellido: new FormControl(this.myUser.apellido, Validators.required),
-      f_username: new FormControl(this.myUser.username, Validators.required),
-      f_email: new FormControl(this.myUser.email, [Validators.required, Validators.email]),
-      f_genero: new FormControl(this.myUser.genero),
-      f_fechaNacimiento: new FormControl(this.myUser.fechaNacimiento),
-      f_telefono: new FormControl(this.myUser.telefono)
+    this._rolsService.rolObtener().subscribe((resp: any) => {
+      this.listRol = resp
+      console.log(this.listRol)
+      return this.listRol
     })
-  }
-  // email = new FormControl('', [Validators.required, Validators.email]);
-  // nombre = new FormControl('', [Validators.required]);
-  // apellido = new FormControl('', [Validators.required]);
-  // username = new FormControl('', [Validators.required]);
-  // genero = new FormControl('');
-  // fechaNacimiento = new FormControl('');
-  // telefono = new FormControl('');
 
-  getErrorMessage(controlName) {
-    const notEmpty = 'No puedes dejar este campo en blanco.'
-    if (controlName == 'f_email') {
-      return this.formProfile['f_email'].hasError('required') ? notEmpty :
-        this.formProfile['f_email'].hasError('email') ? '¡Correo no valido!' :
-          '';
+    console.log('EDITAR!!!')
+    this.myUser = JSON.parse(localStorage.getItem('MyUser'))
+    this._userService.userObtener(this.myUser.id).subscribe((resp: any) => {
+      this.myUser = resp
+    })
+    this.formProfile = new FormGroup({
 
-    } else if (controlName == 'f_nombre') {
-      return this.formProfile[controlName].hasError('required') ? notEmpty :
-        '';
-    }
-    else if (controlName == 'f_apellido') {
-      return this.formProfile[controlName].hasError('required') ? notEmpty :
-        '';
-    }
-    else if (controlName == 'f_username') {
-      return this.formProfile[controlName].hasError('required') ? notEmpty :
-        '';
-    }
+      fu_nombre: new FormControl('' || this.myUser.nombre, Validators.required),
+      fu_apellido: new FormControl('' || this.myUser.apellido, Validators.required),
+      fu_activo: new FormControl('' || this.myUser.activo),
+      fu_idrol: new FormControl(0 || this.myUser.idRol),
+      fu_genero: new FormControl('' || this.myUser.genero),
+      fu_telefono: new FormControl('' || this.myUser.telefono),
+      fu_email: new FormControl('' || this.myUser.email),
+      fu_fechaNacimiento: new FormControl('' || this.myUser.fechaNacimiento),
+      fu_username: new FormControl('' || this.myUser.username, Validators.required),
+      fu_password: new FormControl('' || this.myUser.password),
+      fu_password_confi: new FormControl('' || this.myUser.password),
+    })
+    console.log("My myUser:: ", this.myUser)
   }
 
   saveChanges() {
@@ -91,19 +82,28 @@ export class ProfileComponent implements OnInit {
       console.log("No es falido el formlulario: ", this.formProfile.value)
       Swal.fire('¡No puedes dejar campos en blanco!', 'Asegurate de completar todos los campos para continuar', 'error')
       return
+    } else if (this.formProfile.value.fu_password != this.formProfile.value.fu_password_confi) {
+      Swal.fire('¡Contraseña no coinciden!', 'Favor, asegurece de que las contraseñas sean iguales', 'error')
+      return
     }
 
-    this.myUser.nombre = this.formProfile.value.f_nombre
-    this.myUser.apellido = this.formProfile.value.f_apellido
-    this.myUser.username = this.formProfile.value.f_username
-    this.myUser.email = this.formProfile.value.f_email
-    this.myUser.genero = this.formProfile.value.f_genero
-    this.myUser.fechaNacimiento = this.formProfile.value.f_fechaNacimiento
-    this.myUser.telefono = this.formProfile.value.f_telefono
+    this.myUser.nombre = this.formProfile.value.fu_nombre
+    this.myUser.apellido = this.formProfile.value.fu_apellido
+    this.myUser.username = this.formProfile.value.fu_username
+    this.myUser.email = this.formProfile.value.fu_email
+    this.myUser.idRol = this.formProfile.value.fu_idrol
+    this.myUser.activo = this.formProfile.value.fu_activo
+    this.myUser.telefono = this.formProfile.value.fu_activo
+    this.myUser.fechaNacimiento = this.formProfile.value.fu_fechaNacimiento
+    this.myUser.genero = this.formProfile.value.fu_genero
+    this.myUser.idUsuarioInsercion = this.myUser.id
+    this.myUser.password = this.formProfile.value.fu_password
+    console.log("myUser for PUT UPDATE: ", this.myUser)
 
     console.log("EL MYUSER despues del FORM tiene: ", this.myUser)
     this._loginServer.myUserUpdate(this.myUser).subscribe((resp: ModelUsuario) => {
       this.myUser = resp
+      localStorage.setItem('MyUser', JSON.stringify(this.myUser))
       return this.myUser
     })
     Swal.fire('¡Excelente! 🌋', 'Los cambios se han realizado correctamente', 'success')

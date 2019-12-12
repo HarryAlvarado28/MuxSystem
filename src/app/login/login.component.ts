@@ -117,11 +117,6 @@ export class LoginComponent implements OnInit {
       url: 'home'
     },
     {
-      id: 4,
-      label: 'Áreas',
-      url: 'areas'
-    },
-    {
       id: 1,
       label: 'Colecciones',
       url: 'collections'
